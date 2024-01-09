@@ -17,11 +17,20 @@ RSpec.describe Ride do
     it 'has attributes' do 
         expect(carnival.duration).to eq(14)
         expect(carnival.rides).to eq([])
-        expect(carnival.total_revenue).to eq(0)
     end
 
-    xit 'methods work' do
-       
+    it 'methods work' do
+       carnival.add_ride(ride1)
+       carnival.add_ride(ride2)
+       carnival.add_ride(ride3)
+       visitor1.add_preference(:gentle)
+       visitor2.add_preference(:gentle)
+       visitor3.add_preference(:thrilling)
+       ride1.board_rider(visitor1)
+       ride2.board_rider(visitor2)
+       ride3.board_rider(visitor3)
+       ride1.board_rider(visitor1)
+       expect(carnival.total_revenue).to eq(9)
     end
 
 end
