@@ -31,6 +31,8 @@ RSpec.describe Ride do
        ride3.board_rider(visitor3)
        ride1.board_rider(visitor1)
        expect(carnival.total_revenue).to eq(9)
+       expect(carnival.most_popular_ride).to eq(ride1)
+       expect(carnival.most_profitable_ride).to eq(ride2)
     end
 
 end
